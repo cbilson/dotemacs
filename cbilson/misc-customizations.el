@@ -11,10 +11,10 @@
 (set-variable 'suggest-key-bindings t)
 (set-variable 'transient-mark-mode nil)
 
-(add-to-list 'load-path (concat dotfiles-dir "vendor"))
-(add-to-list 'load-path (concat dotfiles-dir "vendor/clojure-mode"))
-(add-to-list 'load-path (concat dotfiles-dir "vendor/midje"))
-(add-to-list 'load-path (concat dotfiles-dir "elpa-to-submit/fsharp"))
+(add-to-list 'load-path (concat user-emacs-directory "vendor"))
+(add-to-list 'load-path (concat user-emacs-directory "vendor/clojure-mode"))
+(add-to-list 'load-path (concat user-emacs-directory "vendor/midje"))
+(add-to-list 'load-path (concat user-emacs-directory "elpa-to-submit/fsharp"))
 
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "google-chrome")

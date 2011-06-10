@@ -1,7 +1,7 @@
 ;;
 ;; fsharp-mode
 ;;
-(add-to-list 'load-path (concat dotfiles-dir "cbilson/fsharp"))
+(add-to-list 'load-path (concat user-emacs-directory "cbilson/fsharp"))
 
 (require 'fsharp)
 (setq auto-mode-alist (cons '("\\.fs[iylx]?$" . fsharp-mode) auto-mode-alist))
