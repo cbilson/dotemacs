@@ -11,11 +11,6 @@
 (set-variable 'suggest-key-bindings t)
 (set-variable 'transient-mark-mode nil)
 
-(add-to-list 'load-path (concat user-emacs-directory "vendor"))
-(add-to-list 'load-path (concat user-emacs-directory "vendor/clojure-mode"))
-(add-to-list 'load-path (concat user-emacs-directory "vendor/midje"))
-(add-to-list 'load-path (concat user-emacs-directory "elpa-to-submit/fsharp"))
-
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "google-chrome")
 ; some other filename patterns that are XML
@@ -95,12 +90,10 @@ This is the same as using \\[set-mark-command] with the prefix argument."
 
 (define-key global-map [remap exchange-point-and-mark] 'exchange-point-and-mark-no-activate)
 
-;; (eval-after-load 'paredit
-;;   '(progn (define-key paredit-mode-map (kbd "C-<left>") 'backward-word)
-;;           (define-key paredit-mode-map (kbd "C-<right>") 'forward-word)))
-
 (require 'visible-mark)
 (visible-mark-mode)
+
+(require 'flymake)
 
 (defun remove-dos-eol ()
   "Removes the disturbing '^M' showing up in files containing mixed UNIX and DOS line endings."
