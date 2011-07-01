@@ -12,6 +12,9 @@
 (set-variable 'transient-mark-mode nil)
 
 (setq browse-url-browser-function 'browse-url-generic
+      browse-url-generic-program "~/bin/conkeror")
+
+(setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "google-chrome")
 ; some other filename patterns that are XML
 (setq auto-mode-alist (cons '("\\.xaml$" . nxml-mode) auto-mode-alist))
@@ -21,7 +24,7 @@
 (setq auto-mode-alist (cons '("\\.csproj$" . nxml-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.fsproj$" . nxml-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.kml$" . nxml-mode) auto-mode-alist))
-(setq auto-mode-alist (cons '("\\.conkererrc$" . js2-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.conkerorrc$" . javascript-mode) auto-mode-alist))
 
 (org-remember-insinuate)
 
