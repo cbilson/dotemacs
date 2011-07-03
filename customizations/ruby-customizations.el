@@ -8,7 +8,6 @@
   (interactive)
   (run-ruby ironruby-ir "IronRuby"))
 
-(require 'feature-mode)
 (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
 
 ;; (require 'rspec-mode)

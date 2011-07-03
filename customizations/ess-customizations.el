@@ -1,4 +1,5 @@
-(add-to-list 'load-path (concat user-emacs-directory "cbilson/ess/lisp"))
+(add-to-list 'load-path (concat default-directory "cbilson/ess/lisp"))
+(add-to-list 'auto-mode-alist '("\\.R$" . ess-site))
 
 (defun load-ess ()
   (interactive)

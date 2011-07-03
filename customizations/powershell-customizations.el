@@ -5,4 +5,6 @@
 (add-to-list 'auto-mode-alist '("\\.ps1$" . powershell-mode))
 (add-to-list 'auto-mode-alist '("\\.psm1$" . powershell-mode))
 
-(setq powershell-indent 2)
+(eval-after-load "powershell-mode"
+  (progn
+    (setq powershell-indent 2)))

@@ -2,6 +2,7 @@
 ;; clojure stuff
 ;;
 (add-to-list 'load-path (concat user-emacs-directory "cbilson/midje"))
+(add-to-list 'auto-mode-alist '("\\.clj$" . clojure-mode))
 
 (eval-after-load "clojure-mode"
   '(progn (add-hook 'clojure-mode-hook
@@ -29,4 +30,4 @@
 
 (add-hook 'slime-mode-hook (lambda () (setq slime-complete-symbol-function 'slime-fuzzy-complete-symbol)))
 (add-hook 'slime-repl-mode-hook 'clojure-mode-font-lock-setup)
-
+(global-set-key (kbd "C-c C-j") 'clojure-jack-in)
