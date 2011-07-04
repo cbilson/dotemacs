@@ -29,5 +29,4 @@
                        (define-key clojure-test-mode-map (kbd "C-2") 'midje-recheck-last-fact-checked)))))
 
 (add-hook 'slime-mode-hook (lambda () (setq slime-complete-symbol-function 'slime-fuzzy-complete-symbol)))
-(add-hook 'slime-repl-mode-hook 'clojure-mode-font-lock-setup)
 (global-set-key (kbd "C-c C-j") 'clojure-jack-in)
