@@ -1,0 +1,7 @@
+#name : fact
+#description: creates an xunit fact block
+# --
+[<Fact>]
+let $1 () =
+    Assert.$2
+

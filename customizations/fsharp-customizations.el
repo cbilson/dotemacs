@@ -9,7 +9,9 @@
 (add-to-list 'auto-mode-alist '("\\.fsi$" . fsharp-mode))
 
 (eval-after-load "fsharp"
-  '(progn 
+  '(progn
+     (require 'yasnippet)
+     (yas/minor-mode)
      (set 'fsharp-indent-offset 3)
      (setq inferior-fsharp-program
            (if (eq system-type 'windows-nt)
