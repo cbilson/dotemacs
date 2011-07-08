@@ -2,7 +2,7 @@
 (add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
 
 (defun use-jcoffee-script ()
-  (let ((jcoffee-jar (concat vendor-directory "jcoffeescript-1.1.jar")))
+  (let ((jcoffee-jar (concat vendor-directory "/jcoffeescript-1.1.jar")))
     (setq coffee-command (concat "java -jar " jcoffee-jar))
     (setq coffee-args-compile "")))
 

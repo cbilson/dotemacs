@@ -1,7 +1,7 @@
 ;;
 ;; clojure stuff
 ;;
-(add-to-list 'load-path (concat default-directory "vendor/midje"))
+(add-to-list 'load-path (concat default-directory "/vendor/midje"))
 (add-to-list 'auto-mode-alist '("\\.clj$" . clojure-mode))
 
 (eval-after-load "clojure-mode"

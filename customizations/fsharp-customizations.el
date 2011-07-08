@@ -1,12 +1,12 @@
 ;;
 ;; fsharp-mode
 ;;
-(add-to-list 'load-path (concat vendor-directory "fsharp"))
+(add-to-list 'load-path (concat vendor-directory "/fsharp"))
 (autoload 'fsharp-mode "fsharp" "Major mode for editing F# code." t)
 (autoload 'run-fsharp "inf-fsharp" "Run an inferior F# process." t)
-(add-to-list 'auto-mode-alist '("\\.fs$" . fsharp))
-(add-to-list 'auto-mode-alist '("\\.fsx$" . fsharp))
-(add-to-list 'auto-mode-alist '("\\.fsi$" . fsharp))
+(add-to-list 'auto-mode-alist '("\\.fs$" . fsharp-mode))
+(add-to-list 'auto-mode-alist '("\\.fsx$" . fsharp-mode))
+(add-to-list 'auto-mode-alist '("\\.fsi$" . fsharp-mode))
 
 (eval-after-load "fsharp"
   '(progn 
