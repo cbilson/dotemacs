@@ -12,10 +12,10 @@
 (set-variable 'transient-mark-mode nil)
 
 (setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "~/bin/conkeror")
+      browse-url-generic-program (if (eq system-type 'windows-nt)
+                                     "C:\\Dropbox\\bin\\FirefoxPortable5\\App\\Firefox\\firefox.exe -app C:\\Dropbox\\bin\\conkeror\\application.ini"
+                                   "~/bin/conkeror"))
 
-(setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "google-chrome")
 ; some other filename patterns that are XML
 (setq auto-mode-alist (cons '("\\.xaml$" . nxml-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.msbuild$" . nxml-mode) auto-mode-alist))
@@ -93,8 +93,8 @@ This is the same as using \\[set-mark-command] with the prefix argument."
 
 (define-key global-map [remap exchange-point-and-mark] 'exchange-point-and-mark-no-activate)
 
-(require 'visible-mark)
-(visible-mark-mode)
+;; (require 'visible-mark)
+;; (visible-mark-mode)
 
 (require 'flymake)
 

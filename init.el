@@ -17,11 +17,16 @@
   (package-refresh-contents)
   (dolist (p '(clojure-mode slime slime-repl clojure-test-mode magit
                             paredit starter-kit starter-kit-lisp
-                            scpaste idle-highlight-mode))
+                            starter-kit-js idle-highlight-mode))
     (when (not (package-installed-p p))
       (package-install p))))
+
+(setq vendor-directory (concat user-emacs-directory "vendor"))
+(add-to-list 'load-path vendor-directory)
 
 (let ((customizations-directory (concat user-emacs-directory "customizations")))
   (progn 
     (add-to-list 'load-path customizations-directory)
-     (mapc 'load (directory-files customizations-directory nil ".*el$"))))
+    (mapc 'load (directory-files customizations-directory nil ".*el$"))))
+
+(put 'narrow-to-region 'disabled nil)
