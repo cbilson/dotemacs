@@ -30,3 +30,4 @@
     (mapc 'load (directory-files customizations-directory nil ".*el$"))))
 
 (put 'narrow-to-region 'disabled nil)
+
