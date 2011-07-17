@@ -1,23 +1,20 @@
 ;;
 ;; python stuff
 ;;
-(autoload 'pymacs-apply "pymacs")
-(autoload 'pymacs-call "pymacs")
-(autoload 'pymacs-eval "pymacs" nil t)
-(autoload 'pymacs-exec "pymacs" nil t)
-(autoload 'pymacs-load "pymacs" nil t)
+(add-hook 'python-mode-hook
+          (lambda ()
+            (require 'nose)
+            (local-set-key "\C-ca" 'nosetests-all)
+            (local-set-key "\C-cm" 'nosetests-module)
+            (local-set-key "\C-c." 'nosetests-one)
+            (local-set-key "\C-cpa" 'nosetests-pdb-all)
+            (local-set-key "\C-cpm" 'nosetests-pdb-module)
+            (local-set-key "\C-cp." 'nosetests-pdb-one)
 
-(defun load-ropemacs ()
-  "Load pymacs and ropemacs"
-  (interactive)
-  (require 'pymacs)
-  (pymacs-load "ropemacs" "rope-")
-  ;; Automatically save project python buffers before refactorings
-  (setq ropemacs-confirm-saving 'nil)
-  )
+            (require 'yasnippet)
+            (yas/minor-mode)
 
-;; (eval-after-load "pymacs"
-;;   ;; '(add-to-list 'pymacs-load-path YOUR-PYMACS-DIRECTORY)
-;;   (load-ropemacs)
-;;   )
+            (if (eq system-type 'darwin)
+                (setq python-shell-interpreter "/Library/Frameworks/Python.framework/Versions/2.7/bin/python"
+                      python-shell-interpreter-args "-i"))))
 

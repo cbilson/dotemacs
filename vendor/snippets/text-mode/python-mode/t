@@ -1,0 +1,5 @@
+# -*- coding: utf-8 -*-
+# name: t
+# --
+def test_${1:name}():
+    $2
