@@ -10,9 +10,6 @@
                        (require 'paredit)
                        (paredit-mode)
                        
-                       (require 'midje-mode)
-                       (midje-mode)
-                       
                        (require 'durendal)
                        (durendal-enable)
                        
