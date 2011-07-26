@@ -12,9 +12,4 @@
             (local-set-key "\C-cp." 'nosetests-pdb-one)
 
             (require 'yasnippet)
-            (yas/minor-mode)
-
-            (if (eq system-type 'darwin)
-                (setq python-shell-interpreter "/Library/Frameworks/Python.framework/Versions/2.7/bin/python"
-                      python-shell-interpreter-args "-i"))))
-
+            (yas/minor-mode)))
