@@ -7,12 +7,15 @@
     (setq coffee-command (concat "java -jar " jcoffee-jar))
     (setq coffee-args-compile "")))
 
-(defun use-iron-coffee-compiler ()
-  (let ((iron-coffee-exe (concat vendor-directory "/IronCoffee.exe")))
-    (setq coffee-command iron-coffee-exe)))
-
 (defun coffee-custom ()
   "coffee-mode-hook"
-  (use-iron-coffee-compiler))
+  (setq coffee-command "/usr/local/bin/coffee")
+  (setq coffee-js-mode 'javascript-mode)
+  (define-key coffee-mode-map (kbd "C-c C-c") 'coffee-compile-buffer)
+  (define-key coffee-mode-map (kbd "C-c C-r") 'coffee-compile-region)
+  (define-key coffee-mode-map (kbd "C-c C-s") 'coffee-repl)
+  (define-key coffee-mode-map [remap comment-dwim] 'coffee-comment-dwim)
+  (define-key coffee-mode-map "\C-m" 'coffee-newline-and-indent)
+  (define-key coffee-mode-map "\C-c\C-o\C-s" 'coffee-cos-mode))
 
 (add-hook 'coffee-mode-hook '(lambda () (coffee-custom)))
