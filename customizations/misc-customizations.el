@@ -5,11 +5,13 @@
 (column-number-mode t)
 (blink-cursor-mode t)
 (auto-compression-mode 1)
+
 (set-variable 'scroll-step 1)
 (set-variable 'scroll-conservatively 5)
 (set-variable 'default-truncate-lines 1)
 (set-variable 'suggest-key-bindings t)
 (set-variable 'transient-mark-mode nil)
+(put 'narrow-to-region 'disabled nil)
 
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program (if (eq system-type 'windows-nt)
