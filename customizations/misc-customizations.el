@@ -80,24 +80,6 @@ This is the same as using \\[set-mark-command] with the prefix argument."
   (exchange-point-and-mark)
   (deactivate-mark nil))
 
-;;
-;; Rebind a few keys
-;;
-(global-set-key (kbd "C-<left>") 'backward-word)
-(global-set-key (kbd "C-<right>") 'forward-word)
-(global-set-key (kbd "C-c C-r") 'remember)
-(global-set-key (kbd "C-c w") 'rotate-windows)
-(global-set-key (kbd "C-x C-a") '(lambda () (interactive) (ansi-term "/bin/zsh")))
-(global-set-key (kbd "C-@") 'push-mark-no-activate)
-(global-set-key (kbd "M-`") 'jump-to-mark)
-(global-set-key (kbd "C-x c") 'comment-region)
-(global-set-key (kbd "<f5>") 'durendal-jack-in)
-
-(define-key global-map [remap exchange-point-and-mark] 'exchange-point-and-mark-no-activate)
-
-;; (require 'visible-mark)
-;; (visible-mark-mode)
-
 (require 'flymake)
 
 (defun remove-dos-eol ()
