@@ -105,3 +105,6 @@ This is the same as using \\[set-mark-command] with the prefix argument."
   (interactive)
   (setq buffer-display-table (make-display-table))
   (aset buffer-display-table ?\^M []))
+
+(add-hook 'after-save-hook
+          'executable-make-buffer-file-executable-if-script-p)
