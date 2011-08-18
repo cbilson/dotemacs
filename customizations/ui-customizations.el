@@ -8,4 +8,4 @@
                                            nil
                                          'fullboth)))
 
-(global-set-key (kbd "M-RET") 'toggle-fullscreen)
+
