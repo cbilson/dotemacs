@@ -1,14 +1,12 @@
-;;
+S;;
 ;; Global Keybindings
 ;;
-(global-set-key (kbd "C-<left>") 'backward-word)
-(global-set-key (kbd "C-<right>") 'forward-word)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key (kbd "C-x c") 'comment-or-uncomment-region)
 (global-set-key (kbd "C-c C-r") 'remember)
 (global-set-key (kbd "C-c w") 'rotate-windows)
-(global-set-key (kbd "C-x C-a") '(lambda () (interactive) (ansi-term "/bin/zsh")))
 (global-set-key (kbd "C-@") 'push-mark-no-activate)
 (global-set-key (kbd "M-`") 'jump-to-mark)
-(global-set-key (kbd "C-x c") 'comment-or-uncomment-region)
 (global-set-key (kbd "<f5>") 'durendal-jack-in)
 
 (define-key global-map [remap exchange-point-and-mark] 'exchange-point-and-mark-no-activate)
@@ -22,7 +20,7 @@
 (defun define-clojure-key-maps ()
   (define-key clojure-mode-map (kbd "C-c c") 'comment-region)
   (define-key clojure-mode-map (kbd "C-c u") 'uncomment-region)
-  (define-key clojure-mode-map (kbd "C-S-w") 'mark-sexp)n
+  (define-key clojure-mode-map (kbd "C-S-w") 'mark-sexp)
   (define-key clojure-test-mode-map (kbd "C-1") 'midje-check-fact)
   (define-key clojure-test-mode-map (kbd "C-2") 'midje-recheck-last-fact-checked))
 
