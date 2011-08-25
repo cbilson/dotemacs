@@ -1,4 +1,3 @@
-
 ;;
 ;; misc
 ;;
@@ -90,3 +89,4 @@ This is the same as using \\[set-mark-command] with the prefix argument."
 
 (add-hook 'after-save-hook
           'executable-make-buffer-file-executable-if-script-p)
+
