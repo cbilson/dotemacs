@@ -1,11 +1,11 @@
 (add-to-list 'load-path (concat vendor-directory "/ess/lisp"))
-(add-to-list 'auto-mode-alist '("\\.R$" . ess-site))
+(load (concat vendor-directory "/ess/lisp/ess-site"))
+(set 'auto-mode-alist (cons '("\\.R$" . r-mode) auto-mode-alist))
 
 (defun load-ess ()
   (interactive)
-  '(progn 
-     (require 'ess-site)
-     (set 'auto-mode-alist (cons '("\\.R$" . r-mode) auto-mode-alist))))
+  '(progn) 
+  )
 
 
 
