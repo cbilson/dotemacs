@@ -17,6 +17,39 @@
                                      "C:\\Dropbox\\bin\\FirefoxPortable5\\App\\Firefox\\firefox.exe -app C:\\Dropbox\\bin\\conkeror\\application.ini"
                                    "~/bin/conkeror"))
 
+(setq user-full-name "Chris Bilson")
+(setq user-mail-address "cbilson@pobox.com")
+
+(require 'gnus)
+(setq nnml-directory "~/gmail")
+(setq message-directory "~/gmail")
+(setq gnus-ignored-newsgroups "^to\\.\\|^[0-9. ]+\\( \\|$\\)\\|^[\”]\”[#’()]")
+(setq gnus-select-method
+      '(nnimap "gmail"
+               (nnimap-address "imap.gmail.com")
+               (nnimap-server-port 993)
+               (nnimap-stream ssl)))
+
+(setq message-send-mail-function 'smtpmail-send-it
+      smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
+      smtpmail-auth-credentials '(("smtp.gmail.com" 587 "cbilson@gmail.com" nil))
+      smtpmail-default-smtp-server "smtp.gmail.com"
+      smtpmail-smtp-server "smtp.gmail.com"
+      smtpmail-smtp-service 587
+      starttls-use-gnutls t)
+
+(setq mm-attachment-override-types '("image/.*"))
+(setq mm-discouraged-alternatives '("text/html" "text/richtext"))
+
+(add-hook 'dired-mode-hook
+          (lambda ()
+            (define-key dired-mode-map "b" 'my-browser-find-file)))
+
+(defun my-dired-browser-find-file ()
+  "Dired function to view a file in a web browser"
+  (interactive)
+    (browse-url (browse-url-file-url (dired-get-filename))))
+
 ; some other filename patterns that are XML
 (setq auto-mode-alist (cons '("\\.xaml$" . nxml-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.msbuild$" . nxml-mode) auto-mode-alist))
