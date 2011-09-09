@@ -52,6 +52,7 @@
 
 ; some other filename patterns that are XML
 (setq auto-mode-alist (cons '("\\.xaml$" . nxml-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.spark$" . html-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.msbuild$" . nxml-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.build$" . nxml-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.proj$" . nxml-mode) auto-mode-alist))
