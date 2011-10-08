@@ -7,7 +7,7 @@
 (global-set-key (kbd "C-c w") 'rotate-windows)
 (global-set-key (kbd "C-@") 'push-mark-no-activate)
 (global-set-key (kbd "M-`") 'jump-to-mark)
-(global-set-key (kbd "<f5>") 'durendal-jack-in)
+(global-set-key (kbd "C-x C-j") 'dired-jump)
 
 (define-key global-map [remap exchange-point-and-mark] 'exchange-point-and-mark-no-activate)
 
