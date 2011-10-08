@@ -4,6 +4,9 @@
 (column-number-mode t)
 (blink-cursor-mode t)
 (auto-compression-mode 1)
+(global-subword-mode 1)
+(setq make-backup-files nil)
+(setq auto-save-default nil)
 
 (set-variable 'scroll-step 1)
 (set-variable 'scroll-conservatively 5)
