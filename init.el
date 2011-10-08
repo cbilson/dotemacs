@@ -1,7 +1,51 @@
 
 (require 'package)
+
 (add-to-list 'package-archives
                '("marmalade" . "http://marmalade-repo.org/packages/") t)
+
+(when (not package-archive-contents)
+  (package-refresh-contents))
+
+(defvar my-packages '(starter-kit
+                      starter-kit-lisp
+                      starter-kit-eshell
+                      starter-kit-js
+                      starter-kit-bindings
+                      clojure-mode
+                      clojure-test-mode
+                      csharp-mode
+                      ctags
+                      dired-single
+                      durendal
+                      elisp-slime-nav
+                      find-file-in-git-repo
+                      flymake-coffee
+                      gist
+                      ghc
+                      gnuplot
+                      graphviz-dot-mode
+                      haskell-mode
+                      magit
+                      markdown-mode
+                      marmalade
+                      midje-mode
+                      nose
+                      ntcmd
+                      org
+                      python-mode
+                      scala-mode
+                      slime
+                      slime-repl
+                      tuareg
+                      w32-browser
+                      yas-jit
+                      yasnippet
+                      yasnippet-bundle))
+
+(dolist (package my-packages)
+  (when (not (package-installed-p package))
+    (package-install package)))
 
 (setq slime-net-coding-system 'utf-8-unix)
 
@@ -11,15 +55,6 @@
 (add-hook 'eshell-mode-hook
           '(lambda () (fmakunbound 'eshell/sudo)
              (fmakunbound 'eshell/su)))
-
-(defun package-updates ()
-  (interactive)
-  (package-refresh-contents)
-  (dolist (p '(clojure-mode slime slime-repl clojure-test-mode magit
-                            paredit starter-kit starter-kit-lisp
-                            starter-kit-js idle-highlight-mode))
-    (when (not (package-installed-p p))
-      (package-install p))))
 
 (setq vendor-directory (concat user-emacs-directory "vendor"))
 (add-to-list 'load-path vendor-directory)
