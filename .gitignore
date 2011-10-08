@@ -12,3 +12,5 @@ MGALFAPAIR
 abbrev_defs
 eshell/
 tramp
+bookmarks
+swank/
