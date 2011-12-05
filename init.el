@@ -1,11 +1,13 @@
 
 (require 'package)
+(setq vendor-directory (concat user-emacs-directory "vendor"))
+(add-to-list 'load-path vendor-directory)
 
 (add-to-list 'package-archives
                '("marmalade" . "http://marmalade-repo.org/packages/") t)
 
-(when (not package-archive-contents)
-  (package-refresh-contents))
+;; (when (not package-archive-contents)
+;;   (package-refresh-contents))
 
 (defvar my-packages '(starter-kit
                       starter-kit-lisp
@@ -43,9 +45,15 @@
                       yasnippet
                       yasnippet-bundle))
 
-(dolist (package my-packages)
+(defun install-my-packages ()
+  (dolist (package my-packages)
   (when (not (package-installed-p package))
-    (package-install package)))
+    (package-install package))))
+
+(let ((customizations-directory (concat user-emacs-directory "customizations")))
+  (progn 
+    (add-to-list 'load-path customizations-directory)
+    (mapc 'load (directory-files customizations-directory nil ".*el$"))))
 
 (setq slime-net-coding-system 'utf-8-unix)
 
@@ -55,14 +63,6 @@
 (add-hook 'eshell-mode-hook
           '(lambda () (fmakunbound 'eshell/sudo)
              (fmakunbound 'eshell/su)))
-
-(setq vendor-directory (concat user-emacs-directory "vendor"))
-(add-to-list 'load-path vendor-directory)
-
-(let ((customizations-directory (concat user-emacs-directory "customizations")))
-  (progn 
-    (add-to-list 'load-path customizations-directory)
-    (mapc 'load (directory-files customizations-directory nil ".*el$"))))
 
 (put 'narrow-to-region 'disabled nil)
 
