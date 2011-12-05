@@ -69,6 +69,13 @@
 
 (org-remember-insinuate)
 
+;(add-hook 'org-mode-hook 'turn-on-org-cdlatex)
+
+(setq org-latex-to-pdf-process
+      '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+        "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+        "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+
 (defun toggle-fullscreen (&optional f)
   "Toggles whether or not the window is fullscreen"
   (interactive)
