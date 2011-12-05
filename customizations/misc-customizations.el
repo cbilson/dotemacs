@@ -23,6 +23,9 @@
 (setq user-full-name "Chris Bilson")
 (setq user-mail-address "cbilson@pobox.com")
 
+(if (eq system-type 'darwin)
+    (setq ispell-program-name "/usr/local/bin/aspell"))
+
 (require 'gnus)
 (setq nnml-directory "~/gmail")
 (setq message-directory "~/gmail")
