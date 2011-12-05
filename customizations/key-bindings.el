@@ -43,3 +43,24 @@
 (global-set-key "\C-\M-M" 'fastnav-mark-to-char-backward)
 (global-set-key "\C-\M-p" 'fastnav-sprint-forward)
 (global-set-key "\C-\M-P" 'fastnav-sprint-backward)
+
+;;
+;; Unicode shortcuts
+;;
+(define-prefix-command 'symbols-keymap)
+(define-key symbols-keymap (kbd "a") "α")
+(define-key symbols-keymap (kbd "b") "β")
+(define-key symbols-keymap (kbd "d") "δ")
+(define-key symbols-keymap (kbd "g") "γ")
+(define-key symbols-keymap (kbd "s") "σ")
+(define-key symbols-keymap (kbd "S") "Σ")
+(define-key symbols-keymap (kbd "t") "θ")
+(define-key symbols-keymap (kbd "T") "Θ")
+
+(global-set-key (kbd "M-i") 'symbols-keymap)
+
+(add-to-list 'load-path vendor-directory)
+
+(require 'iy-go-to-char)
+(global-set-key (kbd "M-m") 'iy-go-to-char)
+
