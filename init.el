@@ -73,7 +73,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(org-modules (quote (org-bbdb org-bibtex org-docview org-gnus org-info org-jsinfo org-habit org-inlinetask org-irc org-mac-message org-mew org-mhe org-rmail org-special-blocks org-vm org-wl org-w3m)))
- '(org-startup-indented t)
  '(python-indent-offset 2)
  '(tab-width 2))
 (custom-set-faces
@@ -83,3 +82,4 @@
  ;; If there is more than one, they won't work right.
  )
 (put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
