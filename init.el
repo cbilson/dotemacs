@@ -55,8 +55,6 @@
     (add-to-list 'load-path customizations-directory)
     (mapc 'load (directory-files customizations-directory nil ".*el$"))))
 
-(setq slime-net-coding-system 'utf-8-unix)
-
 (set-face-foreground 'vertical-border
                      (face-attribute 'vertical-border :background))
 
@@ -64,9 +62,6 @@
           '(lambda () (fmakunbound 'eshell/sudo)
              (fmakunbound 'eshell/su)))
 
-(put 'narrow-to-region 'disabled nil)
-
-(put 'set-goal-column 'disabled nil)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

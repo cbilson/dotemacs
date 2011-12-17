@@ -7,6 +7,9 @@
 (global-subword-mode 1)
 (setq make-backup-files nil)
 (setq auto-save-default nil)
+(setq slime-net-coding-system 'utf-8-unix)
+(put 'narrow-to-region 'disabled nil)
+(put 'set-goal-column 'disabled t)
 
 (set-variable 'scroll-step 1)
 (set-variable 'scroll-conservatively 5)
@@ -56,25 +59,24 @@
   (interactive)
     (browse-url (browse-url-file-url (dired-get-filename))))
 
-; some other filename patterns that are XML
-(setq auto-mode-alist (cons '("\\.xaml$" . nxml-mode) auto-mode-alist))
-(setq auto-mode-alist (cons '("\\.spark$" . html-mode) auto-mode-alist))
-(setq auto-mode-alist (cons '("\\.msbuild$" . nxml-mode) auto-mode-alist))
-(setq auto-mode-alist (cons '("\\.build$" . nxml-mode) auto-mode-alist))
-(setq auto-mode-alist (cons '("\\.proj$" . nxml-mode) auto-mode-alist))
-(setq auto-mode-alist (cons '("\\.csproj$" . nxml-mode) auto-mode-alist))
-(setq auto-mode-alist (cons '("\\.fsproj$" . nxml-mode) auto-mode-alist))
-(setq auto-mode-alist (cons '("\\.kml$" . nxml-mode) auto-mode-alist))
-(setq auto-mode-alist (cons '("\\.conkerorrc$" . javascript-mode) auto-mode-alist))
-
-(org-remember-insinuate)
-
-;(add-hook 'org-mode-hook 'turn-on-org-cdlatex)
-
-(setq org-latex-to-pdf-process
-      '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-        "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-        "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+;; some other filename patterns that are XML
+(setq auto-mode-alist
+      (append
+             '(("\\.xaml$" . nxml-mode)
+               ("\\.spark$" . html-mode)
+               ("\\.msbuild$" . nxml-mode)
+               ("\\.build$" . nxml-mode)
+               ("\\.proj$" . nxml-mode)
+               ("\\.csproj$" . nxml-mode)
+               ("\\.fsproj$" . nxml-mode)
+               ("\\.kml$" . nxml-mode)
+               ("\\.conkerorrc$" . javascript-mode)
+               ("\\.Guardfile$" . ruby-mode)
+               ("\\.md$" . markdown-mode)
+               ("\\.markdown$" . markdown-mode)
+               ("README" . markdown-mode)
+               ("HACKING" . markdown-mode))
+               auto-mode-alist))
 
 (defun toggle-fullscreen (&optional f)
   "Toggles whether or not the window is fullscreen"
