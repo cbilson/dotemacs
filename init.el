@@ -67,6 +67,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(org-alphabetical-lists t)
  '(org-modules (quote (org-bbdb org-bibtex org-docview org-gnus org-info org-jsinfo org-habit org-inlinetask org-irc org-mac-message org-mew org-mhe org-rmail org-special-blocks org-vm org-wl org-w3m)))
  '(python-indent-offset 2)
  '(tab-width 2))
