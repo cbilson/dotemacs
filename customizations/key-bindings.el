@@ -58,6 +58,7 @@
 (define-key symbols-keymap (kbd "T") "Θ")
 
 (global-set-key (kbd "M-i") 'symbols-keymap)
+(global-set-key (kbd "C-o") 'other-window)
 
 (add-to-list 'load-path vendor-directory)
 
