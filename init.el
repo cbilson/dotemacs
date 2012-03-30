@@ -2,53 +2,10 @@
 (require 'package)
 (setq vendor-directory (concat user-emacs-directory "vendor"))
 (add-to-list 'load-path vendor-directory)
-
 (add-to-list 'package-archives
                '("marmalade" . "http://marmalade-repo.org/packages/") t)
 
-;; (when (not package-archive-contents)
-;;   (package-refresh-contents))
-
-(defvar my-packages '(starter-kit
-                      starter-kit-lisp
-                      starter-kit-eshell
-                      starter-kit-js
-                      starter-kit-bindings
-                      clojure-mode
-                      clojure-test-mode
-                      csharp-mode
-                      ctags
-                      dired-single
-                      durendal
-                      elisp-slime-nav
-                      find-file-in-git-repo
-                      flymake-coffee
-                      gist
-                      ghc
-                      gnuplot
-                      graphviz-dot-mode
-                      haskell-mode
-                      magit
-                      markdown-mode
-                      marmalade
-                      midje-mode
-                      nose
-                      ntcmd
-                      org
-                      python-mode
-                      scala-mode
-                      slime
-                      slime-repl
-                      tuareg
-                      w32-browser
-                      yas-jit
-                      yasnippet
-                      yasnippet-bundle))
-
-(defun install-my-packages ()
-  (dolist (package my-packages)
-  (when (not (package-installed-p package))
-    (package-install package))))
+(package-initialize)
 
 (let ((customizations-directory (concat user-emacs-directory "customizations")))
   (progn 
