@@ -38,3 +38,7 @@
         "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
         "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
 
+(require 'org-macs)
+(setq org-directory "~/Dropbox/org")
+(setq org-mobile-directory "~/Dropbox/org")
+(setq org-mobile-inbox-for-pull "~/Dropbox/org")
