@@ -18,10 +18,14 @@
 (set-variable 'transient-mark-mode nil)
 (put 'narrow-to-region 'disabled nil)
 
-(setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program (if (eq system-type 'windows-nt)
-                                     "C:\\Dropbox\\bin\\FirefoxPortable5\\App\\Firefox\\firefox.exe -app C:\\Dropbox\\bin\\conkeror\\application.ini"
-                                   "~/bin/conkeror"))
+(defun browse-url-on-mac (url &optional new-window)
+  (interactive (browse-url-interactive-arg "URL: "))
+  (let ((url (if (aref (url-generic-parse-url url) 0)
+                 url
+               (concat "http://" url))))
+    (start-process (concat "open " url) nil "open" "-a" "Conkeror" url)))
+
+(setq browse-url-browser-function 'browse-url-on-mac)
 
 (setq user-full-name "Chris Bilson")
 (setq user-mail-address "cbilson@pobox.com")
