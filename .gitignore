@@ -15,3 +15,5 @@ tramp
 bookmarks
 swank/
 /.smex-items
+/ac-comphist.dat
+/tags

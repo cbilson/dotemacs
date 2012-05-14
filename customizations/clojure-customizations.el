@@ -22,15 +22,25 @@
                    (midje-mode)))
 
              (require 'paredit)
-                       (paredit-mode)
+             (paredit-mode)
+             (define-clojure-key-maps)
 
-             (define-clojure-key-maps)))
+             (require 'projectile)
+             (setq projectile-ctags-command-line "/usr/local/bin/ctags -R %s")
+             (projectile-mode)
+
+             (require 'yas/minor-mode)))
 
 (add-hook 'clojurescript-mode-hook
-          (lambda () (progn (require 'paredit)
-                       (paredit-mode)
-                       (define-clojure-key-maps))))
+          (lambda ()
+            (require 'paredit)
+            (paredit-mode)
+            (define-clojure-key-maps)
+
+            (require 'yas/minor-mode)))
 
 (add-hook 'slime-mode-hook
           (lambda ()
-            (setq slime-complete-symbol-function 'slime-fuzzy-complete-symbol)))
+            (paredit-mode)
+            (set-up-slime-ac)))
+
