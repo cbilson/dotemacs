@@ -23,13 +23,10 @@
 
              (require 'paredit)
              (paredit-mode)
-             (define-clojure-key-maps)
-
-             (require 'projectile)
-             (setq projectile-ctags-command-line "/usr/local/bin/ctags -R %s")
              (projectile-mode)
 
-             (require 'yas/minor-mode)))
+             (require 'yasnippet)
+             (yas/minor-mode)))
 
 (add-hook 'clojurescript-mode-hook
           (lambda ()
