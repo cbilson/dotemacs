@@ -3,12 +3,12 @@
 (setq vendor-directory (concat user-emacs-directory "vendor"))
 (add-to-list 'load-path vendor-directory)
 (add-to-list 'package-archives
-               '("marmalade" . "http://marmalade-repo.org/packages/") t)
+             '("marmalade" . "http://marmalade-repo.org/packages/") t)
 
 (package-initialize)
 
 (let ((customizations-directory (concat user-emacs-directory "customizations")))
-  (progn 
+  (progn
     (add-to-list 'load-path customizations-directory)
     (mapc 'load (directory-files customizations-directory nil ".*el$"))))
 
