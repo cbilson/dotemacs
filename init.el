@@ -23,6 +23,9 @@
 (ac-config-default)
 (add-to-list 'ac-dictionary-directories (concat user-emacs-directory "auto-complete-dict"))
 
+(require 'projectile)
+(setq projectile-ctags-command-line "/usr/local/bin/ctags -R %s")
+
 (setq ac-auto-show-menu t
       ac-auto-start t
       ac-dwim t
